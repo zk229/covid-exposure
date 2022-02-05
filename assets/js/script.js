@@ -29,9 +29,11 @@ var retrieveData = function(date, count) {
                     source: countyList,
                     change: switchCounty
                 });
-                if(localStorage.getItem("county") != null) {
-                    $("#county").val(localStorage.getItem("county"));
-                    makeChart(localStorage.getItem("county"));
+                var prevCounty = localStorage.getItem("county");
+                if(prevCounty != null) {
+                    $("#county").val(prevCounty);
+                    $("#county-name p").text(prevCounty + " County");
+                    makeChart(prevCounty);
                 }
                 return;
             }
@@ -44,6 +46,7 @@ var retrieveData = function(date, count) {
 // event handler for county search
 var switchCounty = function(event) {
     localStorage.setItem("county", $(this).val());
+    $("#county-name p").text($(this).val() + " County");
     makeChart($(this).val());
 };
 
