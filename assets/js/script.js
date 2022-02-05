@@ -73,4 +73,9 @@ var makeChart = function(county) {
     $("#chart").attr("src", "https://quickchart.io/chart?c=" + JSON.stringify(chartObj) + "&w=500&h=250");
 };
 
+$(".navbar-burger").click(function(event) {
+    console.log("click");
+    $(".navbar-menu").toggleClass("is-active");
+});
+
 retrieveData(startDate.subtract((numWeeks - 1) * 7, "days"), numWeeks);
