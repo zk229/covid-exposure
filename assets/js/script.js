@@ -1,12 +1,13 @@
 var weekData = {};
 var countyList = [];
 var numWeeks = 5;
+var state = "Florida";
 var startDate = moment().subtract(2, "days");
 
 // make API calls to the CDC database by week
 var retrieveData = function(date, count) {
     var prevDay = date.format("YYYY-MM-DD");
-    fetch("https://data.cdc.gov/resource/8396-v7yb.json?state_name=Florida&report_date=" + prevDay).then( function(response) {
+    fetch("https://data.cdc.gov/resource/8396-v7yb.json?state_name=" + state + "&report_date=" + prevDay).then( function(response) {
         response.json().then( function(data) {
             data.forEach(function(element) {
                 var countyName = element["county_name"];
@@ -31,7 +32,6 @@ var retrieveData = function(date, count) {
                 var prevCounty = localStorage.getItem("county");
                 if(prevCounty != null) {
                     $("#county").val(prevCounty);
-                    $("#county-name p").text(prevCounty + " County");
                     makeChart(prevCounty);
                 }
                 return;
@@ -45,12 +45,17 @@ var retrieveData = function(date, count) {
 // event handler for county search
 var switchCounty = function(event) {
     localStorage.setItem("county", $(this).val());
-    $("#county-name p").text($(this).val() + " County");
     makeChart($(this).val());
 };
 
+// empty search bar when clicked
+$("#county").click(function(event) {
+    $(this).val("");
+});
+
 // create a chart for the given county using Quickchart API
 var makeChart = function(county) {
+    $("#county-name p").text(county + " County");
     var currentData = weekData[county.toLowerCase()];
     var labels = [];
     var numbers = [];
@@ -59,8 +64,9 @@ var makeChart = function(county) {
         labels.push(moment().subtract((numWeeks - 1 - i) * 7 + 2, "days").format("MM-DD-YY"));
     }
     var dataset = {
-        label: "Transmission Rate per 100k",
-        data: numbers
+        label: county + " County",
+        data: numbers,
+        fill: false
     };
     var chartObj = {
         type: "line",
@@ -72,6 +78,7 @@ var makeChart = function(county) {
     $("#chart").attr("src", "https://quickchart.io/chart?c=" + JSON.stringify(chartObj) + "&w=500&h=250");
 };
 
+// respond to clicks on navbar burger
 $(".navbar-burger").click(function(event) {
     $(".navbar-menu").toggleClass("is-active");
 });
