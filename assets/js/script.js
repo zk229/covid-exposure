@@ -25,7 +25,8 @@ var retrieveData = function(date, count) {
             if(count === 0){
                 countyList.sort();
                 $( "#county" ).autocomplete({
-                    source: countyList
+                    source: countyList,
+                    change: switchCounty
                   });
                 return;
             }
@@ -35,8 +36,13 @@ var retrieveData = function(date, count) {
     });
 };
 
-var makeChart = function() {
+var switchCounty = function(event) {
+    makeChart($(this).val().toLowerCase());
+};
 
+var makeChart = function(county) {
+    var currentData = weekData[county];
+    console.log(currentData);
 };
 
 retrieveData(moment().subtract((numWeeks - 1) * 7 + 2, "days"), numWeeks);
