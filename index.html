@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid Stat in FL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="./assets/css/debug.css">
+=======
+    <script src="https://kit.fontawesome.com/49d0c5b78d.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/debug.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+>>>>>>> c3a8c77d1e87543614fa046e005211d487461bef
 </head>
+
 <body>
+    <nav class="navbar" role="navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" id="logo">
+                <i class="fas fa-hands-wash fa-2x"></i>
+                <h1>Covid EXPosure</h1>
+            </a>
+            <a  role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="hiddenNav" id="burgerMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="hiddenNav" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Cases
+                </a>
+                <a class="navbar-item">
+                    Data
+                </a>
+                <a class="navbar-item">
+                    Transmission Rates
+                </a>
+                <a class="navbar-item">
+                    Death
+                </a>
+                <div class="navbar-end"></div>
+            </div>
+        </div>
+    </nav>
 
-    
-    <!--Navbar for covid -->
-    <header>
-        <h1>
-            <a href="/">Covid Statistics in Florida</a>
-        </h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#cases">Cases</a>
-                </li>
-                <li>
-                    <a href="#data">Data</a>
-                </li>
-                <li>
-                    <a href="transmission-rates">Transmission Rates</a>
-                </li>
-                <li>
-                    <a href="deaths">Deaths</a>
-                </li>
-            </ul>
-
-        </nav>
-
-    </header>
     <!--End Navbar for Covid -->
+    <label for="county">County: </label>
+    <input id="county" />
+
     <!--County Overview-->
     <section id="county-overview">
         <div class="">
-            <h2 class="section-title primary-border">County Overview</h2>
+            <h1 class="section-title primary-border">County Overview</h1>
+        </div>
+
+        <div id="county-name">
+            <h2>County:</h2>
+            <p></p>
         </div>
 
         <div>
@@ -60,22 +82,21 @@
     </section>
     <!--County overview-->
     <!--CDC gov info here-->
-    <iframe>
+    <img id="chart">
 
-    </iframe>
+    </img>
     <!--CDC gov info ends-->
     <!--Footer-->
-    <footer class="page-footer">
-        <div class="footer-copyright">
+    <footer class="footer">
+        <div class="content has-text-centered">
             <p>
                 <span>&copy;
-                    Copyright - All rights reserved 
+                    Copyright - All rights reserved
 
                 </span>
                 <span class="footer-links"> Data from following sources:
-                    <a href=""></a>
-                    <a href=""></a>
-                    <A href=""></A>
+                    <a href="https://quickchart.io/">Quick Chart</a>
+                    <a href="https://open.cdc.gov/apis.html"> & The CDC </a>
                 </span>
             </p>
         </div>
@@ -87,4 +108,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
