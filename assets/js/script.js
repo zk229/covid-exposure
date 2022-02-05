@@ -26,7 +26,7 @@ var retrieveData = function(date, count) {
                 countyList.sort();
                 $( "#county" ).autocomplete({
                     source: countyList,
-                    change: switchCounty
+                    close: switchCounty
                 });
                 var prevCounty = localStorage.getItem("county");
                 if(prevCounty != null) {
