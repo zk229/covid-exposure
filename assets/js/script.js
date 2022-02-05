@@ -28,7 +28,11 @@ var retrieveData = function(date, count) {
                 $( "#county" ).autocomplete({
                     source: countyList,
                     change: switchCounty
-                  });
+                });
+                if(localStorage.getItem("county") != null) {
+                    $("#county").val(localStorage.getItem("county"));
+                    makeChart(localStorage.getItem("county"));
+                }
                 return;
             }
             date = date.add(7, "days");
@@ -39,6 +43,7 @@ var retrieveData = function(date, count) {
 
 // event handler for county search
 var switchCounty = function(event) {
+    localStorage.setItem("county", $(this).val());
     makeChart($(this).val());
 };
 
