@@ -8,7 +8,6 @@ var retrieveData = function(date, count) {
     var prevDay = date.format("YYYY-MM-DD");
     fetch("https://data.cdc.gov/resource/8396-v7yb.json?state_name=Florida&report_date=" + prevDay).then( function(response) {
         response.json().then( function(data) {
-            console.log(data);
             data.forEach(function(element) {
                 var countyName = element["county_name"];
                 countyName = countyName.substring(0, countyName.indexOf("County") - 1);
@@ -23,8 +22,6 @@ var retrieveData = function(date, count) {
                 };
             });
             console.log(weekData);
-            console.log(prevDay);
-            console.log(count);
             if(count === 0){
                 return;
             }
