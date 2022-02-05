@@ -22,7 +22,6 @@ var retrieveData = function(date, count) {
                     "level" : element["community_transmission_level"]
                 });
             });
-            console.log(weekData);
             if(count === 0){
                 countyList.sort();
                 $( "#county" ).autocomplete({
@@ -74,7 +73,6 @@ var makeChart = function(county) {
 };
 
 $(".navbar-burger").click(function(event) {
-    console.log("click");
     $(".navbar-menu").toggleClass("is-active");
 });
 
