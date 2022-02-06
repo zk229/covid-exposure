@@ -15,7 +15,7 @@ Click on hte county and scroll down to lacate the information you require.
 
 
 # Screenshot 
-
+assets/img/wireframe.png
 
 
 ## Contributions 
