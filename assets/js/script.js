@@ -1,6 +1,6 @@
 var weekData = {};
 var countyList = [];
-var numWeeks = 5;
+var numWeeks = 10;
 var state = "Florida";
 var startDate = moment().subtract(2, "days");
 
