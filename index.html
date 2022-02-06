@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
-    <nav class="navbar is-dark" role="navigation">
+<body class="has-background-grey-darker">
+    <nav class="navbar is-black" role="navigation">
         <div class="navbar-brand">
             <a class="navbar-item" id="logo">
                 <i class="fas fa-hands-wash fa-2x"></i>
@@ -46,8 +46,6 @@
     </nav>
 
     <!--End Navbar for Covid -->
-    <label for="county">County: </label>
-    <input id="county" />
     
     <!--County Overview-->
     <div class="tile is-ancestor">
@@ -59,6 +57,8 @@
                 </div>
                 
                 <div id="county-name">
+                    <label for="county">County: </label>
+                    <input id="county" />
                     <h2>County:</h2>
                     <p></p>
                 </div>
@@ -81,25 +81,26 @@
             </div>
             <div class="tile is-child box">
                 <p class="title">Additional Resources</p>
-            </div>
-            <div class="tile is-child box">
-                <p class="title">County Graph</p>
-
-                <img id="chart">
-            
-                </img>
+                <h3>Testing Centers:</h3>
+                <a href="https://floridahealthcovid19.gov/testing-sites/" target="blank">Floridahealthcovid19.gov</a>
+                <h3>Vacination Sites:</h3>
+                <a href="https://floridahealthcovid19.gov/vaccines/" target="blank">Floridahealthcovid19.gov</a>
+                <h3>Health Dept:</h3>
+                <a href="https://www.floridahealth.gov/?_ga=2.33579239.734086043.1644115428-1918889239.1644115428" target="blank">Floridahealth.gov</a>
             </div>
         </div>
+        <div class="tile is-child box">
+            <p class="title">County Graph</p>
+
+            <img id="chart">
+        
+            </img>
+        </div>
     </div>
-    <section id="county-overview">
-    </section>
-    <!--County overview-->
-    <!--CDC gov info here-->
-    <!--CDC gov info ends-->
-    <!--Footer-->
-    <footer class="footer">
+  
+    <footer class="footer has-background-black">
         <div class="content has-text-centered">
-            <p>
+            <p class="has-text-white	">
                 <span>&copy;
                     Copyright - All rights reserved
 
