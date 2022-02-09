@@ -4,3 +4,6 @@
 .footer{
     margin-top: 75px;
 } 
+body {
+    min-height: 100vh;
+}
