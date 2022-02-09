@@ -12,7 +12,7 @@ Click on hte county and scroll down to lacate the information you require.
 *JavaScript
 
 # Website 
-https://zk229.github.io/project-1/
+https://zk229.github.io/covid-exposure/
 
 
 # Screenshot 
