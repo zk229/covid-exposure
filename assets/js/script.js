@@ -55,8 +55,11 @@ $("#county").click(function(event) {
 
 // create a chart for the given county using Quickchart API
 var makeChart = function(county) {
-    $("#county-name p").text(county + " County");
+    $("#county-name").text(county + " County");
+    
     var currentData = weekData[county.toLowerCase()];
+    $("#case-number").text(currentData[currentData.length-1]["cases"])
+    
     var labels = [];
     var numbers = [];
     for(var i = 0; i < currentData.length; i++) {
