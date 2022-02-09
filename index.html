@@ -1,83 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covid Stat in FL</title>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/49d0c5b78d.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="./assets/css/debug.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-    <!--Navbar for covid -->
-    <header>
-        <h1>
-            <a href="/">Covid Statistics in Florida</a>
-        </h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#cases">Cases</a>
-                </li>
-                <li>
-                    <a href="#data">Data</a>
-                </li>
-                <li>
-                    <a href="transmission-rates">Transmission Rates</a>
-                </li>
-                <li>
-                    <a href="deaths">Deaths</a>
-                </li>
-            </ul>
 
-        </nav>
+<body class="has-background-grey-darker">
+    <nav class="navbar is-black" role="navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" id="logo">
+                <i class="fas fa-hands-wash fa-2x"></i>
+                <h1 class="has-text-weight-bold is-size-3">Covid <span class="has-text-danger">EXP</span>osure</h1>
+            </a>
+            <a  role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="hiddenNav" id="burgerMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="hiddenNav" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Cases
+                </a>
+                <a class="navbar-item">
+                    Data
+                </a>
+                <a class="navbar-item">
+                    Transmission Rates
+                </a>
+                <a class="navbar-item">
+                    Death
+                </a>
+                <div class="navbar-end"></div>
+                
+            </div>
+        </div>
+    </nav>
 
-    </header>
     <!--End Navbar for Covid -->
+    
     <!--County Overview-->
-    <section id="county-overview">
-        <div class="">
-            <h2 class="section-title primary-border">County Overview</h2>
-        </div>
+    <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+                <p class="title">County Info</p>
+                <div class="">
+                    <h1 class="section-title primary-border"></h1>
+                </div>                
+                <div>
+                    <label class="is-size-3"for="county">Search: </label>
+                    <input class="input" id="county" />
+                    <h2 class="is-size-4">County: <span class="has-text-danger-dark" id="county-name"></span></h2>
+                </div>
+                                
+                <div>
+                    <h3 class="is-size-4">Cases: <span class="has-text-danger-dark" id="case-number"></span> (per 100k)</h3>
+                </div>
+            </div>
 
-        <div>
-            <h3>Cases</h3>
+            <div class="tile is-child box">
+                <p class="title">Additional Resources</p>
+                <h3 class="has-text-weight-bold is-size-5">Florida Health Website</h3>
+                <a href="https://floridahealthcovid19.gov/testing-sites/" class="has-text-danger-dark is-size-4" target="blank">Testing Centers</a> <br />
+                <a href="https://floridahealthcovid19.gov/vaccines/" class= "has-text-danger-dark is-size-4" target="blank">Vaccination Sites</a> <br />
+                <a href="https://www.floridahealth.gov/?_ga=2.33579239.734086043.1644115428-1918889239.1644115428" class= "has-text-danger-dark is-size-4" target="blank">Health Dept</a>
+            </div>
         </div>
+        <div class="tile is-child box">
+            <p class="title">County Graph</p>
 
-        <div>
-            <h3>Data</h3>
+            <img id="chart">
+        
+            </img>
         </div>
-
-        <div>
-            <h3>transmission-rates</h3>
-        </div>
-
-        <div>
-            <h3>Deaths</h3>
-        </div>
-    </section>
-    <!--County overview-->
-    <!--CDC gov info here-->
-    <iframe>
-
-    </iframe>
-    <!--CDC gov info ends-->
-    <!--Footer-->
-    <footer class="page-footer">
-        <div class="footer-copyright">
-            <p>
+    </div>
+  
+    <footer class="footer has-background-black">
+        <div class="content has-text-centered">
+            <p class="has-text-white	">
                 <span>&copy;
-                    Copyright - All rights reserved 
+                    Copyright - All rights reserved
 
                 </span>
                 <span class="footer-links"> Data from following sources:
-                    <a href=""></a>
-                    <a href=""></a>
-                    <A href=""></A>
+                    <a href="https://quickchart.io/">Quick Chart</a>
+                    <a href="https://open.cdc.gov/apis.html"> & The CDC </a>
                 </span>
             </p>
         </div>
     </footer>
     <!-- Footer end-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
