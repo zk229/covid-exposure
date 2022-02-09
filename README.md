@@ -16,7 +16,7 @@ https://zk229.github.io/project-1/
 
 
 # Screenshot 
-assets/img/wireframe.png
+assets/img/ScreenShot.png
 
 
 ## Contributions 
