@@ -1,6 +1,10 @@
 .navbar{
     margin-bottom: 75px;
 }
+#hover:hover{
+    background-color: rgb(50, 53, 53);
+}
+
 .footer{
     margin-top: 75px;
 } 
