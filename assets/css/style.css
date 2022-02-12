@@ -5,14 +5,15 @@
     background-color: rgb(50, 53, 53);
 }
 
+p {
+    line-height: 1.5;
+}    
+ 
+
 .footer{
     clear: both;
     position: relative;
     height: 700px;
   
-    
-
 } 
-body {
-    min-height: 100vh;
-}
+
