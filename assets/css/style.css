@@ -6,7 +6,12 @@
 }
 
 .footer{
-    margin-top: 75px;
+    clear: both;
+    position: relative;
+    height: 700px;
+  
+    
+
 } 
 body {
     min-height: 100vh;
