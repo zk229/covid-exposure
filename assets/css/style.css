@@ -1,9 +1,19 @@
 .navbar{
     margin-bottom: 75px;
 }
-.footer{
-    margin-top: 75px;
-} 
-body {
-    min-height: 100vh;
+#hover:hover{
+    background-color: rgb(50, 53, 53);
 }
+
+p {
+    line-height: 1.5;
+}    
+ 
+
+.footer{
+    clear: both;
+    position: relative;
+    height: 700px;
+  
+} 
+
