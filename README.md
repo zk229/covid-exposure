@@ -18,8 +18,19 @@ Users will be able to see real time data over a period of time of how and where 
 https://zk229.github.io/covid-exposure/
 
 
-# Screenshot 
-![](assets/img/wireframe.png)
+# Screenshots 
+
+Desktop view of the website
+
+![](assets/img/img-1.png)
+
+Counties are automatically suggested to the user based on what they type
+
+![](assets/img/img-2.png)
+
+The site is mobile-responsive - display is optimized for mobile devices
+
+![](assets/img/img-3.png)
 
 ## User Story
 
